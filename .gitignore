@@ -1,0 +1,12 @@
+# Ignore all files and folders in root (to avoid project files making it to the repository):
+/*
+
+# Except for the following folders:
+!/src/
+!/tests/
+!/Input/
+
+# Except for the following files:
+!.gitattributes
+!.gitignore
+!README.md
