@@ -3,25 +3,23 @@ from collections import defaultdict
 
 bags = [line.rstrip().split("bags contain") for line in open("Day_7_2020.txt", "r")]
 
+
 def part_1():
     contains_gold = set()
     contains_gold_size = 0
     for item in bags:
         if "shiny gold" in item[1]:
-            print(item)
             contains_gold.add(item[0].strip())
     print(contains_gold)
 
     while len(contains_gold) is not contains_gold_size:
+        contains_gold_size = len(contains_gold)
         to_add = set()
         for item in bags:
             for color in contains_gold:
                 if color in item[1]:
-                    print(item)
                     to_add.add(item[0].strip())
-        contains_gold_size = len(contains_gold)
         contains_gold.update(to_add)
-    print(contains_gold)
     print(len(contains_gold))
 
 
@@ -42,4 +40,5 @@ def part2():
     return search('shiny gold' ) - 1  # Rm one for shiny gold itself
 
 
+part_1()
 print(part2())
